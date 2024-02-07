@@ -4,7 +4,7 @@ return {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		keys = function(self, keys) 
+		keys = function(self, _keys)
 			local harpoon = require("harpoon")
 
 			-- REQUIRED
@@ -16,7 +16,7 @@ return {
 
 				{"<C-a>", function() harpoon:list():select(1) end, desc = "select 1"},
 				{"<C-w>", function() harpoon:list():select(2) end, desc = "select 2"},
-				{"<C-e>", function() harpoon:list():select(3) end, desc = "select 3"},
+				{"<C-d>", function() harpoon:list():select(3) end, desc = "select 3"},
 				{"<C-s>", function() harpoon:list():select(4) end, desc = "select 4"},
 				--
 				-- Toggle previous & next buffers stored within Harpoon list
@@ -28,6 +28,6 @@ return {
 
 
 			return mappings;
-		end, 
+		end,
 	}
 }
