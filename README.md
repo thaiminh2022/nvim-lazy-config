@@ -6,7 +6,7 @@
 
 ```
 # Windows
-git clone thaiminh2022/nvim-lazy-config ~/AppData/nvim
+git clone https://github.com/thaiminh2022/nvim-lazy-config.git ~/AppData/nvim
 ```
 3. Run `nvim` and wait for the plugins to be installed
 
