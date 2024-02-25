@@ -11,6 +11,8 @@ return {
         end,
         keys = {
             { "<leader>ch", vim.lsp.buf.hover,  desc = "Code hover" },
+            { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action" },
+            { "<leader>cd", vim.diagnostic.open_float, desc = "Diagnostic" },
             { "<leader>cf", vim.lsp.buf.format, desc = "Code format" },
         },
     },
