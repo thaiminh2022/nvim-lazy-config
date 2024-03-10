@@ -1,3 +1,8 @@
+if vim.g.vscode then
+    return {}
+end
+
+
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -10,10 +15,10 @@ return {
             vim.g.lsp_zero_extend_lspconfig = 0
         end,
         keys = {
-            { "<leader>ch", vim.lsp.buf.hover,  desc = "Code hover" },
-            { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action" },
+            { "<leader>ch", vim.lsp.buf.hover,         desc = "Code hover" },
+            { "<leader>ca", vim.lsp.buf.code_action,   desc = "Code action" },
             { "<leader>cd", vim.diagnostic.open_float, desc = "Diagnostic" },
-            { "<leader>cf", vim.lsp.buf.format, desc = "Code format" },
+            { "<leader>cf", vim.lsp.buf.format,        desc = "Code format" },
         },
     },
     {
@@ -70,7 +75,7 @@ return {
 
             --- if you want to know more about lsp-zero and mason.nvim
             --- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-            lsp_zero.on_attach(function(client, bufnr)
+            lsp_zero.on_attach(function(_client, bufnr)
                 -- see :help lsp-zero-keybindings
                 -- to learn the available actions
                 lsp_zero.default_keymaps({ buffer = bufnr })
