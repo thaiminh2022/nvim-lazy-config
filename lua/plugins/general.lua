@@ -12,16 +12,6 @@ return {
             { "<leader>gs", vim.cmd.Git, desc = "Git" },
         }
     },
-    -- error helper
-    {
-        "folke/trouble.nvim",
-        keys = {
-            -- Lua
-            { "<leader>tt", function() require("trouble").toggle() end,                        desc = "toggle trouble" },
-            { "<leader>tw", function() require("trouble").toggle("workspace_diagnostics") end, desc = "toggle trouble workspace " },
-        },
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
     {
         "folke/flash.nvim",
         event = "VeryLazy",
