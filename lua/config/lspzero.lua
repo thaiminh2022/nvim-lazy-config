@@ -28,9 +28,6 @@ vim.keymap.set("n", "<leader>ca", function()
     vim.lsp.buf.code_action()
 end)
 
--- Quick godot setup
-require 'lspconfig'.gdscript.setup { capabilities = lsp_zero.get_capabilities() }
-
 -- Quick rust setup
 vim.g.rustaceanvim = {
     server = {
@@ -45,12 +42,14 @@ vim.g.rustaceanvim = {
         },
     },
 }
+-- Quick gdscript setup
+require('lspconfig').gdscript.setup({})
 
 lsp_zero.set_sign_icons({
     error = '✘',
     warn = '▲',
     hint = '⚑',
-    info = '»'
+    info = '»',
 })
 
 require('mason').setup({})
@@ -60,8 +59,20 @@ require('mason-lspconfig').setup({
             require('lspconfig')[server_name].setup({})
         end,
         rust_analyzer = lsp_zero.noop,
-        gdscript = function()
-            require('lspconfig').gdscript.setup({});
+        gopls = function()
+            require('lspconfig').gopls.setup({
+                settings = {
+                    gopls = {
+                        ["ui.inlayhint.hints"] = {
+                            compositeLiteralFields = true,
+                            constantValues = true,
+                            rangeVariableTypes = true,
+                            parameterNames = true,
+                            assignVariableTypes = true,
+                        },
+                    }
+                }
+            })
         end
 
     }
@@ -92,13 +103,6 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         -- confirm completion item
         ['<Enter>'] = cmp.mapping.confirm({ select = true }),
-
-        -- trigger completion menu
-        ['<C-Space>'] = cmp.mapping.complete(),
-
-        -- scroll up and down the documentation window
-        ['<C-<Up>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-<Down>'] = cmp.mapping.scroll_docs(4),
 
         ['<Tab>'] = cmp_action.luasnip_supertab(),
         ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),

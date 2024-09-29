@@ -17,5 +17,5 @@ git clone https://github.com/thaiminh2022/nvim-lazy-config.git ~/AppData/nvim
 - undotree (now built in)
 - cool colorscheme
 - Flash for jumping around
-- lualine + whichkey for visual
+- whichkey for visual
 

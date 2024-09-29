@@ -1,6 +1,7 @@
 vim.opt.nu = true
 vim.opt.number = true;
 
+vim.opt.shell = "D:\\programs\\Rust\\.cargo\\bin\\nu.exe"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
