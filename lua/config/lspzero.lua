@@ -51,7 +51,7 @@ lsp_zero.set_sign_icons({
     hint = '⚑',
     info = '»',
 })
-
+;
 require('mason').setup({})
 require('mason-lspconfig').setup({
     handlers = {
@@ -73,8 +73,7 @@ require('mason-lspconfig').setup({
                     }
                 }
             })
-        end
-
+        end,
     }
 })
 
