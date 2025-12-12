@@ -5,3 +5,5 @@ require("config.lazy");
 vim.lsp.enable("luals");
 vim.lsp.enable("gopls");
 vim.lsp.enable("clangd");
+
+vim.cmd("colorscheme kanagawa-wave");

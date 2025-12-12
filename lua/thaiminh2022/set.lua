@@ -1,5 +1,4 @@
 vim.opt.nu = true
-vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -32,4 +31,3 @@ vim.o.completeopt = "menu,noinsert,popup,fuzzy,noselect"
 vim.opt.formatoptions:remove("r")
 vim.opt.formatoptions:remove("o")
 
-vim.cmd('colorscheme koehler')

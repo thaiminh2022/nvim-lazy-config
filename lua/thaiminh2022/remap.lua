@@ -43,5 +43,13 @@ vim.keymap.set('n', '<leader>rx', function()
     --print(cpesc);
     vim.cmd("silent! !g++ -std=c++17 \"%:p\" -o \"%:p:r\"");
     vim.cmd("vsplit");
-    vim.cmd("terminal echo '" .. cpesc.. "' | \"" .. output_file .. "\"");
-end, { noremap = true, silent = true})
+    vim.cmd("terminal echo '" .. cpesc .. "' | \"" .. output_file .. "\"");
+end, { noremap = true, silent = true })
+
+-- Copy code as html
+vim.keymap.set('n', '<leader>cc', function()
+    vim.cmd("%TOhtml");
+    vim.cmd([[silent! normal! ggVG"+y]])
+    vim.cmd("bd!")
+    print("copied html to clipboard");
+end);
