@@ -53,3 +53,10 @@ vim.keymap.set('n', '<leader>cc', function()
     vim.cmd("bd!")
     print("copied html to clipboard");
 end);
+
+-- inlay hints
+vim.keymap.set("n", "<leader>ih", function()
+    local b = vim.api.nvim_get_current_buf()
+    local on = vim.lsp.inlay_hint.is_enabled({ bufnr = b })
+    vim.lsp.inlay_hint.enable(not on, { bufnr = b })
+end, { desc = "Toggle inlay hints" })
