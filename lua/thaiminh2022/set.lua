@@ -27,7 +27,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 -- auto completion
 vim.o.completeopt = "menu,noinsert,popup,fuzzy,noselect"
-
 vim.opt.formatoptions:remove("r")
 vim.opt.formatoptions:remove("o")
 
