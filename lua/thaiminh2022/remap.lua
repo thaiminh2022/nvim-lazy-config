@@ -11,7 +11,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 --
 -- greatest remap ever
-vim.keymap.set("n", "<leader>p", [["+p]])
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -30,7 +30,12 @@ vim.keymap.set('n', '<leader>fg', "<CMD>Telescope live_grep<CR>", { desc = 'Tele
 vim.keymap.set('n', '<leader>fa', "<CMD>Telescope git_files<CR>", { desc = 'Telescope buffers' })
 vim.keymap.set('n', 'q:', '<Nop>', { noremap = true, silent = true })
 vim.keymap.set('t', 'q:', '<Nop>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format)
+vim.keymap.set({ 'n', 'v' }, '<leader>fm', function()
+    require("conform").format({
+        async = true,
+        lsp_format = "fallback",
+    })
+end, { desc = "Format buffer" })
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 

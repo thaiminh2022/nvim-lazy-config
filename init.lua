@@ -1,7 +1,9 @@
 require("thaiminh2022");
 require("config.lazy");
 
-
+vim.lsp.enable("eslint");
+vim.lsp.enable("tailwindcss");
+vim.lsp.enable("ts_ls");
 vim.lsp.enable("rust_analyzer");
 vim.lsp.enable("luals");
 vim.lsp.enable("gopls");
